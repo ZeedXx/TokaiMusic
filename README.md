@@ -1,14 +1,14 @@
-<h1 align="centre">DAISYXMUSIC V3 🎵</h1>
+<h1 align="centre">Tokai Music</h1>
 
-### A bot that can play music on telegram group's voice call
+### Simple Bot Untuk Mendownload Dan Memutar Musik Di VCG
 
-# Available on telegram as @DaisyXbot
+# Tersedia Di Telegram Dengan @TokaiMusicBot
 
 <p align="center">
-  <img src="https://telegra.ph/file/dd04b1968f1bc1169d162.jpg">
+  <img src="https://telegra.ph/file/255d080ec2e83680e4177.jpg">
 </p>
 
-<h2> Whats new 🔥 </h2>
+<h2> Update 🔥 </h2>
 
 - Thumbnail Support
 - Playlist Support
@@ -21,7 +21,7 @@
 - Userbot auto join
 
 ### Commands 🛠
-#### For all in group
+#### Untuk Semua Member.
 
 - `/play <song name>` - play song you requested
 - `/dplay <song name>` - play song you requested via deezer
@@ -34,7 +34,7 @@
 - `/saavn <song name>` - download songs you want quickly via saavn
 - `/video <song name>` - download videos you want quickly
 
-#### Admins only.
+#### Hanya Admin.
 - `/player` - open music player settings panel
 - `/pause` - pause song play
 - `/resume` - resume song play
@@ -51,7 +51,7 @@
 
 Use [@DaisyXStringGeneratorBot](https://t.me/DaisyXStringGeneratorBot) to get pyrogram string session or [repl](https://repl.it/@SpEcHiDe/GenerateStringSession)
 
-### Credits
+### Semua Credits
 - [InukaASiTH](https://github.com/InukaAsith): Dev
 - [Wrench](https://github.com/EverythingSuckz/): Dev
 - [QueenArzoo](https://github.com/QueenArzoo): Dev
