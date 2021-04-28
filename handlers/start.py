@@ -33,8 +33,8 @@ async def start(_, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "Manual", url="https://telegra.ph/Music-Bot-Command-04-15")
-                  ],[
+                        "Channel", url="https://t.me/musikalitassID"
+                    ),
                     InlineKeyboardButton(
                         "Group", url="https://t.me/musikalitasID"
                     )
@@ -54,7 +54,10 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Owner", url="https://t.me/Insaynn")
+                        "Owner", url="https://t.me/Insaynn"
+                    ),
+                    InlineKeyboardButton(
+                        "Panduan", url="https://telegra.ph/Music-Bot-Command-04-15")
                 ]
             ]
         )
