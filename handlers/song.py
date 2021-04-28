@@ -49,7 +49,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('🔎 Finding the song...')
+    m = message.reply('🔎 Mencari Lagu...')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -68,17 +68,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Found Nothing.\n\nTry another keywork or maybe spell it properly."
+            "❌ Tidak Menemukan Apapun.\n\nKetik Dengan Benar Atau Cari Lagu Lain."
         )
         print(str(e))
         return
-    m.edit("Downloading the song ")
+    m.edit("Mendownload Lagu ")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = '**🎵 Uploaded by **'
+        rep = '**Uploaded by @Insaynn **'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -147,7 +147,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         if file_name:
             try:
                 await message.edit(
-                    "{}\n**File Name:** `{}`\n{}".format(type_of_ps, file_name, tmp)
+                    "{}\n**Nama File:** `{}`\n{}".format(type_of_ps, file_name, tmp)
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
@@ -270,15 +270,15 @@ def time_to_seconds(time):
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/saavn requires an argument.")
+        await message.reply_text("/saavn Membutuhkan Argumen.")
         return
     if is_downloading:
-        await message.reply_text("Another download is in progress, try again after sometime.")
+        await message.reply_text("Sedang Mendownload Lagu Lain, Coba Lagi Nanti.")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
+    m = await message.reply_text("Mencari...")
     try:
         songs = await arq.saavn(query)
         sname = songs[0].song
@@ -306,15 +306,15 @@ async def jssong(_, message):
 async def deezsong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/deezer requires an argument.")
+        await message.reply_text("/deezer Membutuhkan Argumen.")
         return
     if is_downloading:
-        await message.reply_text("Another download is in progress, try again after sometime.")
+        await message.reply_text("Sedang Mendownload Lagu Lain, Coba Lagi Nanti.")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("Searching...")
+    m = await message.reply_text("Mencari...")
     try:
         songs = await arq.deezer(query, 1)
         title = songs[0].title
@@ -338,16 +338,16 @@ async def deezsong(_, message):
 async def ytmusic(client,message: Message):
     global is_downloading
     if is_downloading:
-        await message.reply_text("Another download is in progress, try again after sometime.")
+        await message.reply_text("Sedang Mendownload Video Lain, Coba Lagi Nanti.")
         return
 
     urlissed = get_text(message)
 
     pablo =  await client.send_message(
             message.chat.id,
-            f"`Getting {urlissed} From Youtube Servers. Please Wait.`")
+            f"`Mendapatkan {urlissed} Dari YouTube Server. Tunggu...`")
     if not urlissed:
-        await pablo.edit("Invalid Command Syntax, Please Check Help Menu To Know More!")
+        await pablo.edit("Invalid Command Syntax, Check Help Menu Untuk Command Lengkap!")
         return
     
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
@@ -383,7 +383,7 @@ async def ytmusic(client,message: Message):
 
             if duration > 8:
                 await pablo.edit(
-                    f"❌ Videos longer than 8 minute(s) aren't allowed, the provided video is {duration} minute(s)"
+                    f"❌ Video Melebihi 8 minute(s) Tidak Diperbolehkan, Video Ini Berdurasi {duration} minute(s)"
                 )
                 is_downloading = False
                 return
@@ -391,14 +391,14 @@ async def ytmusic(client,message: Message):
             
     
     except Exception as e:
-        #await pablo.edit(event, f"**Failed To Download** \n**Error :** `{str(e)}`")
+        #await pablo.edit(event, f"**Download Gagal** \n**Error :** `{str(e)}`")
         is_downloading = False
         return
     
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"**Video Name ➠** `{thum}` \n**Requested For :** `{urlissed}` \n**Channel :** `{thums}` \n**Link :** `{mo}`"
-    await client.send_video(message.chat.id, video = open(file_stark, "rb"), duration = int(ytdl_data["duration"]), file_name = str(ytdl_data["title"]), thumb = sedlyf, caption = capy, supports_streaming = True , progress=progress, progress_args=(pablo, c_time, f'`Uploading {urlissed} Song From YouTube Music!`', file_stark))
+    capy = f"**Judul Video ➠** `{thum}` \n**Search :** `{urlissed}` \n**Channel :** `{thums}` \n**Link :** `{mo}`"
+    await client.send_video(message.chat.id, video = open(file_stark, "rb"), duration = int(ytdl_data["duration"]), file_name = str(ytdl_data["title"]), thumb = sedlyf, caption = capy, supports_streaming = True , progress=progress, progress_args=(pablo, c_time, f'`Mengupload {urlissed} Dari Tokai Music!`', file_stark))
     await pablo.delete()
     is_downloading = False
     for files in (sedlyf, file_stark):
