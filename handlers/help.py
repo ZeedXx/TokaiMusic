@@ -28,3 +28,4 @@ async def start(_, message: Message):
 /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
 /admincache - Untuk MemRefresh admin list""",
 
+)
