@@ -5,7 +5,7 @@
 # Tersedia Di Telegram Dengan @TokaiMusicBot
 
 <p align="center">
-  <img src="https://telegra.ph/file/255d080ec2e83680e4177.jpg">
+  <img src="https://telegra.ph/file/7d7eaba0a5e8c504b1a29.jpg">
 </p>
 
 <h2> Update 🔥 </h2>
