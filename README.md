@@ -1,8 +1,8 @@
 <h1 align="centre">Tokai Music</h1>
 
-### Simple Bot Untuk Mendownload Dan Memutar Musik Di VCG
+### Bot Untuk Download Dan Memutar Musik Di VCG
 
-# Tersedia Di Telegram Dengan @TokaiMusicBot
+# Find Me On [Telegram](https://t.me/TokaiMusicBot)
 
 <p align="center">
   <img src="https://telegra.ph/file/7d7eaba0a5e8c504b1a29.jpg">
