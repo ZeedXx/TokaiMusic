@@ -494,8 +494,8 @@ async def play(_, message: Message):
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="Instagram",
-                        url='https://instagram.com/sndykaa/')
+                        text="Channel",
+                        url='https://t.me/TokaiMusik')
                 ]                             
             ]
         )
@@ -530,8 +530,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Dimainkan** Lagu Request Dari {} Via Tokai Music Bot".format(
-        message.from_user.mention()
+        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n" \
+               + f"🎧 **Request Dari:** {message.from_user.mention}"
         ),
     )
         os.remove("final.png")
@@ -620,8 +620,8 @@ async def deezer(client: Client, message_: Message):
              ],                     
              [
                  InlineKeyboardButton(
-                     text="Instagram",
-                     url='https://instagram.com/sndykaa/')
+                     text="Channel",
+                     url='https://t.me/TokaiMusik')
              ]                      
          ]
      )
