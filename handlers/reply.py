@@ -31,8 +31,8 @@ from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from PIL import Image
-from PIL import Imagefont
-from PIL import Imagedraw
+from PIL import ImageFont
+from PIL import ImageDraw
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
@@ -121,7 +121,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="▶️ **Sedang Memutar.**\n\n Lagu Permintaan Dari {}!".format(
+        caption="▶️ **Sedang Memutar.**\n\n Lagu Permintaan Dari {}! Via Tokai Music".format(
         message.from_user.mention()
         ),
     )
