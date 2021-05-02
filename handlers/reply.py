@@ -30,9 +30,18 @@ from helpers.decorators import errors
 from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+import aiohttp
+import aiofiles
+import ffmpeg
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
+
+
+def transcode(filename):
+    ffmpeg.input(filename).output("input.raw", format='s16le', acodec='pcm_s16le', ac=2, ar='48k').overwrite_output().run() 
+    os.remove(filename)
+
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
