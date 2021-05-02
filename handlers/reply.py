@@ -78,8 +78,6 @@ async def play(_, message: Message):
         photo="https://telegra.ph/file/d1adb5378a94e1a9a4daa.jpg",
         reply_markup=keyboard,
         caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n" \
-               + f"🎧 **Request Dari:** {}".format(
-        message.from_user.mention()
+               + f"🎧 **Request Dari:** {message.from_user.mention}"
         ),
-    )
         return await lel.delete()
