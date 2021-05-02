@@ -30,65 +30,12 @@ from helpers.decorators import errors
 from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-import aiohttp
-import aiofiles
-import ffmpeg
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
-
-
-def transcode(filename):
-    ffmpeg.input(filename).output("input.raw", format='s16le', acodec='pcm_s16le', ac=2, ar='48k').overwrite_output().run() 
-    os.remove(filename)
-
-
-def changeImageSize(maxWidth, maxHeight, image):
-    widthRatio = maxWidth / image.size[0]
-    heightRatio = maxHeight / image.size[1]
-    newWidth = int(widthRatio * image.size[0])
-    newHeight = int(heightRatio * image.size[1])
-    newImage = image.resize((newWidth, newHeight))
-    return newImage
-
-async def generate_cover(requested_by, title, views, duration, thumbnail):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(thumbnail) as resp:
-            if resp.status == 200:
-                f = await aiofiles.open("background.png", mode="wb")
-                await f.write(await resp.read())
-                await f.close()
-
-    image1 = Image.open("./background.png")
-    image2 = Image.open("etc/foreground.png")
-    image3 = changeImageSize(1280, 720, image1)
-    image4 = changeImageSize(1280, 720, image2)
-    image5 = image3.convert("RGBA")
-    image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save("temp.png")
-    img = Image.open("temp.png")
-    draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 31)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text(
-        (205, 590), f"Duration: {duration}", (255, 255, 255), font=font
-    )
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
-    draw.text((205, 670),
-        f"Added By: {requested_by}",
-        (255, 255, 255),
-        font=font,
-    )
-    img.save("final.png")
-    os.remove("temp.png")
-    os.remove("background.png")
-
 
 @Client.on_message(command("reply") & other_filters)
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Sedang Proses....**")
+    lel = await message.reply("🔄 **Processing** Sounds...")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
@@ -96,8 +43,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Channel",
-                        url="https://t.me/TokaiMusik")
+                        text="🔊 Channel",
+                        url="https://t.me/FederationSuperGroup")
                    
                 ]
             ]
@@ -109,7 +56,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 240) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Video Berdurasi Melebihi {DURATION_LIMIT} minute(s) Tidak Diizinkan Untuk Diputar!"
+                f"❌ Video Yang Lebih Lama Dari Durasi {DURATION_LIMIT} minute(s) Tidak Diizinkan Untuk Diputar!"
             )
 
         file_name = get_file_name(audio)
@@ -124,15 +71,15 @@ async def play(_, message: Message):
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message.chat.id, file=file_path)
-        await lel.edit(f"#⃣ **Sedang Mengantri** Di Posisi {position}!")
+        await lel.edit(f"#⃣ Lagu Request Kamu **Queued** Di Posisi {position}!")
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_photo(
-        photo="final.png",
+        photo="https://telegra.ph/file/d1adb5378a94e1a9a4daa.jpg",
         reply_markup=keyboard,
-        caption="▶️ **Sedang Memutar.**\n\n Lagu Permintaan Dari {}! Via Tokai Music".format(
+        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n" \
+               + f"🎧 **Request Dari:** {}".format(
         message.from_user.mention()
         ),
     )
-        os.remove("final.png")
         return await lel.delete()
