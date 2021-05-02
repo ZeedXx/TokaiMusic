@@ -9,7 +9,7 @@ async def start(_, message: Message):
 
 /play <Judul Lagu>  - Untuk Memutar Lagu Yang Anda Minta Melalui Youtube.
 /dplay <Judul Lagu>  - Untuk Memutar Lagu Yang Anda Minta Melalui Deezer.
-/plays <Link Youtube / Direct> - Untuk Memutar lagu lewat link YouTube atau Lagu biasa (Sudah di Download)
+/reply <Link Youtube / Direct> - Untuk Memutar lagu lewat link YouTube atau Lagu biasa (Sudah di Download)
 /playlist - Untuk Menampilkan Daftar Putar Lagu.
 /song <Judul Lagu> - Untuk Mendownload Lagu di YouTube.
 /video atau /vsong <Judul Lagu> - Untuk Mendownload Video di YouTube Secara Detail.
