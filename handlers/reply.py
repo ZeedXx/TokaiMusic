@@ -42,9 +42,15 @@ async def play(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
+                   InlineKeyboardButton(
+                       text="Manual",
+                       url='https://telegra.ph/Music-Bot-Command-04-15')
+                
+                ],                     
+                [
                     InlineKeyboardButton(
-                        text="🔊 Channel",
-                        url="https://t.me/FederationSuperGroup")
+                        text="Channel",
+                        url='https://t.me/TokaiMusik')
                    
                 ]
             ]
