@@ -77,7 +77,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="https://telegra.ph/file/d1adb5378a94e1a9a4daa.jpg",
         reply_markup=keyboard,
-        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n" \
+        caption = f"🏷 **Judul:** 404 Not Found\n🤖 **Player:** Tokai Music\n" \
                + f"🎧 **Request Dari:** {message.from_user.mention}"
         ),
         return await lel.delete()
