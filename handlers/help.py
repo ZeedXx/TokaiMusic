@@ -19,7 +19,6 @@ async def start(_, message: Message):
 /current - Untuk Mengecek Antrian dan Juga Siapa yang Me-Request Lagu Tersebut.
 /player - Untuk Memudahkan Anda Dalam Mengelola Robot.
 
-
 • Berikut Adalah Perintah Untuk Admin Group :
 
 /pause - Untuk Menjeda Pemutaran Lagu.
