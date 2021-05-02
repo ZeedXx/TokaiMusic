@@ -35,7 +35,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Processing** Sounds...")
+    lel = await message.reply("🔄 **Sedang Proses**...")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
@@ -56,7 +56,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 240) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Video Yang Lebih Lama Dari Durasi {DURATION_LIMIT} minute(s) Tidak Diizinkan Untuk Diputar!"
+                f"❌ Video Dengan Durasi Melebihi {DURATION_LIMIT} minute(s) Tidak Diizinkan Untuk Diputar!"
             )
 
         file_name = get_file_name(audio)
