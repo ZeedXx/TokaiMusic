@@ -26,9 +26,10 @@ from config import BOT_NAME as bn
 
 @Client.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgQAAx0CVij2LgABECN1YHtruZ8lqFS_yvdqHwkUpjdPUwEAAiMNAALjHT4PZNM7QRBdiYwfBA")
-    await message.reply_text(
-        f"""Hello!! Aku Adalah Bot Musik Telegram Dengan Banyak Sekali Fitur!\n\n➥ Invite [Assistance](https://t.me/TokaiMusicAssistance) masuk kedalam grup kamu, info selengkapnya ketuk tombol channel dibawah.\n\nDikelola oleh @Insaynn 🇲🇨""",
+    await message.send_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
+    await message.send_text(
+        f"""_Hello!! Aku Adalah_ *{bn}*!!\n_Dikelola Oleh_ @Insaynn 🇲🇨\n┈──────────────────────┈\n
+            ➠ _Invite_ [Assistance](https://t.me/TokaiMusicAssistance) _masuk kedalam grup kamu_\n➠ _Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!_""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
@@ -49,15 +50,14 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""__Tokai Music Telah Online__""",
+      await message.reply_text("""_Tokai Music Telah Online, baca panduannya dulu ya!!_""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Owner", url="https://t.me/Insaynn"
-                    ),
+                        "🇲🇨 Donate", url="https://t.me/Insaynn"),
                     InlineKeyboardButton(
-                        "Panduan", url="https://telegra.ph/Music-Bot-Command-04-15")
+                        "Panduan 📜", url="https://telegra.ph/Music-Bot-Command-04-15")
                 ]
             ]
         )
