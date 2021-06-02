@@ -495,7 +495,7 @@ async def play(_, message: Message):
                 [
                     InlineKeyboardButton(
                         text="Channel",
-                        url='https://t.me/TokaiMusik')
+                        url='https://t.me/TokaiProject')
                 ]                             
             ]
         )
@@ -513,8 +513,9 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ Lagu Request Kamu **queued** Di Posisi {position}!",
-        reply_markup=keyboard)
+        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n🤖 **Status:** Queued {position}\n" \
+                + f"🎧 **Request Dari:** {message.from_user.mention}",
+                   reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
     else:
@@ -530,8 +531,8 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n" \
-               + f"🎧 **Request Dari:** {message.from_user.mention}"
+        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n🤖 **Status:** Dimainkan\n" \
+                + f"🎧 **Request Dari:** {message.from_user.mention}"
         ),
         os.remove("final.png")
         return await lel.delete()
