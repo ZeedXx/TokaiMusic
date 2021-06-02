@@ -28,20 +28,20 @@ from config import BOT_NAME as bn
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgQAAx0CVij2LgABECN1YHtruZ8lqFS_yvdqHwkUpjdPUwEAAiMNAALjHT4PZNM7QRBdiYwfBA")
     await message.reply_text(
-        f"""Hello!! Aku Adalah Bot Musik Telegram Dengan Banyak Sekali Fitur!\n\n➥ Tolong Baca Manual Dibawah Agar Tau Cara Menggunakanku.\n\n➥ [Assistance](https://t.me/TokaiMusicAssistance) Juga Harus Berada Di Dalam Grup Kamu.\n\nProvided By @Insaynn 🇲🇨""",
+        f"""Hello!! Aku Adalah Bot Musik Telegram Dengan Banyak Sekali Fitur!\n\n➥ Invite [Assistance](https://t.me/TokaiMusicAssistance) masuk kedalam grup kamu, info selengkapnya ketuk tombol channel dibawah.\n\nDikelola oleh @Insaynn 🇲🇨""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
-                    InlineKeyboardButton(
-                        "Channel", url="https://t.me/musikalitassID"
-                    ),
-                    InlineKeyboardButton(
-                        "Group", url="https://t.me/musikalitasID"
-                    )
-                ],[ 
-                    InlineKeyboardButton(
-                        "Instagram", url="https://instagram.com/sndykaa/"
-                    )]
+                     InlineKeyboardButton(
+                                text="➕️ Tambah Aku Kedalam Group ➕️", url="t.me/TokaiMusicBot?startgroup=true"),
+                ],
+                [
+                     InlineKeyboardButton(text="🔔 Channel", url=f"https://t.me/TokaiProject"),
+                     InlineKeyboardButton(text="Group 🔊", url=f"https://t.me/musikalitasID"),
+                ],
+                [
+                     InlineKeyboardButton(text="📱 Instagram 📱", url="https://instagram.com/sndykaa/"),
+                ]
             ]
         ),
      disable_web_page_preview=True
@@ -49,7 +49,7 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**Tokai Music Telah Online**""",
+      await message.reply_text("""__Tokai Music Telah Online__""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
