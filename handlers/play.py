@@ -69,7 +69,7 @@ def cb_admin_check(func: Callable) -> Callable:
         if cb.from_user.id in admemes:
             return await func(client, cb)
         else:
-            await cb.answer('You ain\'t allowed!', show_alert=True)
+            await cb.answer('You Ain\'t Allowed!', show_alert=True)
             return
     return decorator                                                                       
                                           
@@ -464,7 +464,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎶 **Sedang Proses**")
+    await lel.edit("🎶 **Sedang di Proses**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
