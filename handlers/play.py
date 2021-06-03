@@ -192,11 +192,11 @@ def r_ply(type_):
     mar = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton('Playlist 📖', 'playlist'),
+                InlineKeyboardButton('Playlist', 'playlist'),
                 
             ],
             [       
-                InlineKeyboardButton("❌ Close",'cls')
+                InlineKeyboardButton("Close",'cls')
             ]        
         ]
     )
@@ -358,11 +358,11 @@ async def m_cb(b, cb):
         marr = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Playlist 📖', 'playlist'),
+                    InlineKeyboardButton('Playlist', 'playlist'),
                 
                 ],
                 [       
-                    InlineKeyboardButton("❌ Close",'cls')
+                    InlineKeyboardButton("Close",'cls')
                 ]        
             ]
         )
@@ -403,14 +403,14 @@ async def m_cb(b, cb):
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔄 **Sedang Proses**")
+    lel = await message.reply("⏳ **Sedang Proses**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "helper"
+        user.first_name =  "HoneyMusic"
     usar = user
     wew = usar.id
     try:
@@ -440,7 +440,7 @@ async def play(_, message: Message):
                               #print(e)
                               await lel.edit(
                                   f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} Tidak Bisa Masuk Kedalam Grup Karena Masalah Flood! pastikan Jika Asisten Tidak Dibanned Digrup."
-                                  "\n\nAtau Tambahkan @TokaiMusicAssistance Secara Manual Dan Coba Lagi</b>",
+                                  "\n\nAtau Tambahkan @HoneyAssistant Secara Manual Dan Coba Lagi</b>",
                               )
                               pass
     try:
@@ -464,7 +464,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎵 **Sedang Proses**")
+    await lel.edit("🎶 **Sedang Proses**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -488,14 +488,14 @@ async def play(_, message: Message):
             [   
                 [
                                
-                    InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                    InlineKeyboardButton('Menu ⏯ ', callback_data='menu')
+                    InlineKeyboardButton('Playlist', callback_data='playlist'),
+                    InlineKeyboardButton('Menu', callback_data='menu')
                 
                 ],                     
                 [
                     InlineKeyboardButton(
                         text="Channel",
-                        url='https://t.me/TokaiProject')
+                        url='https://t.me/ZeedGoodBoys')
                 ]                             
             ]
         )
@@ -513,7 +513,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
         photo="final.png", 
-        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n🤖 **Status:** Queued {position}\n" \
+        caption = f"🏷 **Judul:** {title}\n⏱ **Durasi:** {duration}\n🍋 **Status:** Queued {position}!\n" \
                 + f"🎧 **Request Dari:** {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
@@ -531,7 +531,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption = f"🏷 **Judul:** {title}\n⏳ **Durasi:** {duration}\n🤖 **Status:** Dimainkan\n" \
+        caption = f"🏷 **Judul:** {title}\n⏱ **Durasi:** {duration}\n🍋 **Status:** Playing\n" \
                 + f"🎧 **Request Dari:** {message.from_user.mention}"
         ),
         os.remove("final.png")
@@ -545,13 +545,13 @@ async def play(_, message: Message):
 )
 async def deezer(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Sedang Proses**")
+    lel = await message_.reply("⏳ **Sedang Proses**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "DaisyMusic"
+        user.first_name =  "HoneyMusic"
     usar = user
     wew = usar.id
     try:
@@ -581,7 +581,7 @@ async def deezer(client: Client, message_: Message):
                               #print(e)
                               await lel.edit(
                                   f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} Tidak Dapat Memasuki Grup Karena Masalah Flood! Pastikan User Tidak Dibanned Digrup."
-                                  "\n\nAtau Tambahkan @TokaiMusicAssistance Secara Manual Dan Coba Lagi</b>",
+                                  "\n\nAtau Tambahkan @HoneyAssistant Secara Manual Dan Coba Lagi</b>",
                               )
                               pass
     try:
@@ -615,13 +615,13 @@ async def deezer(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
          [   
              [
-                 InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-                 InlineKeyboardButton('Menu ⏯ ', callback_data='menu')     
+                 InlineKeyboardButton('Playlist', callback_data='playlist'),
+                 InlineKeyboardButton('Menu', callback_data='menu')     
              ],                     
              [
                  InlineKeyboardButton(
                      text="Channel",
-                     url='https://t.me/TokaiMusik')
+                     url='https://t.me/ZeedGoodBoys')
              ]                      
          ]
      )
@@ -637,7 +637,7 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"Tokai Music #️⃣ Queued Di Posisi {position}")
+        await res.edit_text(f"🔮 **Your Request Song**\n🍋 **Status**: Antrean Di Posisi {position}!")
     else:
         await res.edit_text("Tokai Music ▶️ Memutar.....")
         chat_id = message_.chat.id
@@ -668,13 +668,13 @@ async def deezer(client: Client, message_: Message):
 )
 async def jiosaavn(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Sedang Proses**")
+    lel = await message_.reply("⏳ **Sedang Proses**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "DaisyMusic"
+        user.first_name =  "HoneyMusic"
     usar = user
     wew = usar.id
     try:
@@ -704,7 +704,7 @@ async def jiosaavn(client: Client, message_: Message):
                               #print(e)
                               await lel.edit(
                                   f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} Tidak Dapat Memasukin Grup Karena Masalah Flood! Pastikan User Tidak Dibanned Digrup."
-                                  "\n\nAtau Tambahkan @TokaiMusicAssistance Secara Manual Dan Coba Lagi</b>",
+                                  "\n\nAtau Tambahkan @HoneyAssistant Secara Manual Dan Coba Lagi</b>",
                               )
                               pass
     try:
@@ -742,13 +742,13 @@ async def jiosaavn(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
          [   
              [
-               InlineKeyboardButton('📖 Playlist', callback_data='playlist'),
-               InlineKeyboardButton('Menu ⏯ ', callback_data='menu')   
+               InlineKeyboardButton('Playlist', callback_data='playlist'),
+               InlineKeyboardButton('Menu', callback_data='menu')   
              ],                     
              [
                InlineKeyboardButton(
                    text="Instagram",
-                   url='https://instagram.com/sndykaa/')
+                   url='https://www.instagram.com/enjouecollectifxx')
              ]                          
          ]
      )
@@ -766,7 +766,7 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"Tokai Music #️⃣ Queued Di Posisi {position}",
+            caption=f"🔮 **Your Request Song**\n🍋 **Status**: Antrean Di Posisi {position}!",
         
         )           
            
