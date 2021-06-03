@@ -50,7 +50,7 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""_Tokai Music Telah Online, baca panduannya dulu ya!!_""",
+      await message.reply_text("""_Tokai Music telah online, ketik_ /help _untuk panduan melihat panduan secara langsung!!_""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
