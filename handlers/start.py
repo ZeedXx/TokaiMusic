@@ -26,10 +26,10 @@ from config import BOT_NAME as bn
 
 @Client.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
-    await message.send_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
-    await message.send_text(
-        f"""_Hello!! Aku Adalah_ *{bn}*!!\n_Dikelola Oleh_ @Insaynn 🇲🇨\n┈──────────────────────┈\n
-            ➠ _Invite_ [Assistance](https://t.me/TokaiMusicAssistance) _masuk kedalam grup kamu_\n➠ _Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!_""",
+    await message.reply_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
+    await message.reply_text(
+        f"""__Hello!! Aku Adalah__ **{bn}**!!\n__Dikelola Oleh__ @Insaynn 🇲🇨\n┈──────────────────────┈\n
+            ➠ __Invite__ [Assistance](https://t.me/TokaiMusicAssistance) __masuk kedalam grup kamu__\n➠ __Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!__""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
@@ -50,7 +50,7 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""_Tokai Music telah online, ketik_ /help _untuk panduan melihat panduan secara langsung!!_""",
+      await message.reply_text("""__Tokai Music telah online, tekan tombol dibawah untuk melihat panduan!!__""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
