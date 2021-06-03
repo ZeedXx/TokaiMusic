@@ -35,7 +35,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Sedang Proses**...")
+    lel = await message.reply("⏳ **Sedang Mencari**...")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
