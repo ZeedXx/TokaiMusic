@@ -28,19 +28,19 @@ from config import BOT_NAME as bn
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
     await message.reply_text(
-        f"""__Hello!! Aku Adalah__ **{bn}**!!\n__Dikelola Oleh__ @Insaynn 🇲🇨\n┈──────────────────────┈\n➠ __Invite__ [Assistance](https://t.me/TokaiMusicAssistance) __masuk kedalam grup kamu__\n➠ __Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!__""",
+        f"""__Hello!! Aku Adalah__ **HoneyMusic**!!\n__Aku di Rancang Untuk Mengunduh Maupun Memutar Musik di Obrolan Suara Grup Telegram.\n┈──────────────────────┈\n➠ __Invite__ [Assistance](https://t.me/HoneyAssistant) __Masuk ke Dalam Grup Anda__\n➠ __Untuk Info, Update, dan Panduan Selengkapnya Tekan Tombol Channel di Bawah, Terima kasih! Have Fun!!__""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                      InlineKeyboardButton(
-                                text="➕️ Tambah Aku Kedalam Group ➕️", url="t.me/TokaiMusicBot?startgroup=true"),
+                                text="➕️ Tambah Aku Kedalam Group ➕️", url="t.me/HoneyMusic_bot?startgroup=true"),
                 ],
                 [
-                     InlineKeyboardButton(text="🔔 Channel", url=f"https://t.me/TokaiProject"),
-                     InlineKeyboardButton(text="Group 🔊", url=f"https://t.me/musikalitasID"),
+                     InlineKeyboardButton(text="Channel", url=f"https://t.me/ZeedGoodBoys"),
+                     InlineKeyboardButton(text="Group", url=f"https://t.me/AmazonVirtual"),
                 ],
                 [
-                     InlineKeyboardButton(text="📱 Instagram 📱", url="https://instagram.com/sndykaa/"),
+                     InlineKeyboardButton(text="Instagram", url="https://www.instagram.com/enjouecollectifxx"),
                 ]
             ]
         ),
@@ -49,14 +49,14 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""__Tokai Music telah online, tekan tombol dibawah untuk melihat panduan!!__""",
+      await message.reply_text("""**Honey Music** __Telah Online, Tekan Tombol di Bawah Untuk Melihat Panduan!!__""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🇲🇨 Donate", url="https://t.me/Insaynn"),
+                        "Group", url="https://t.me/AmazonVirtual"),
                     InlineKeyboardButton(
-                        "Panduan 📜", url="https://telegra.ph/Music-Bot-Command-04-15")
+                        "Panduan 📜", url="https://t.me/ZeedGoodBoys/9)
                 ]
             ]
         )
