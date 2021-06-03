@@ -39,7 +39,7 @@ async def update_admin(client, message):
     for u in admins:
         new_ads.append(u.user.id)
     a[message.chat.id] = new_ads
-    await message.reply_text('Sukses Mengupdate Admin List Di **{}**'.format(message.chat.title))
+    await message.reply_text('🐝 Sukses Mengupdate Admin List Di **{}**'.format(message.chat.title))
 
 
 
@@ -56,7 +56,7 @@ async def pause(_, message: Message):
         await message.reply_text("❗ Lagu Tidak Ada!")
     else:
         callsmusic.pytgcalls.pause_stream(message.chat.id)
-        await message.reply_text("▶️ Dijeda!")
+        await message.reply_text("▶️ DiJeda!")
 
 
 @Client.on_message(command("resume") & other_filters)
@@ -123,4 +123,4 @@ async def skip(_, message: Message):
 @errors
 async def admincache(client, message: Message):
     set(message.chat.id, [member.user for member in await message.chat.get_members(filter="administrators")])
-    #await message.reply_text("Tokai Music=🇲🇨 Admin Cache Direfresh!")
+    #await message.reply_text("🐝 Admin Cache Direfresh!")
