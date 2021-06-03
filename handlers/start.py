@@ -28,8 +28,7 @@ from config import BOT_NAME as bn
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
     await message.reply_text(
-        f"""__Hello!! Aku Adalah__ **{bn}**!!\n__Dikelola Oleh__ @Insaynn 🇲🇨\n┈──────────────────────┈\n
-            ➠ __Invite__ [Assistance](https://t.me/TokaiMusicAssistance) __masuk kedalam grup kamu__\n➠ __Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!__""",
+        f"""__Hello!! Aku Adalah__ **{bn}**!!\n__Dikelola Oleh__ @Insaynn 🇲🇨\n┈──────────────────────┈\n➠ __Invite__ [Assistance](https://t.me/TokaiMusicAssistance) __masuk kedalam grup kamu__\n➠ __Untuk info dan update selengkapnya ketuk tombol channel dibawah, Terima kasih! Enjoy!__""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
