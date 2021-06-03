@@ -3,29 +3,29 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn
 
-@Client.on_message(filters.command("help") & filters.private & ~filters.channel)
+@Client.on_message(filters.command("help") & filters.groups & ~filters.channel)
 async def start(_, message: Message):
-      await message.reply_text("""• Berikut Adalah Perintah Untuk Member Group :
+      await message.reply_text("""_Perintah Untuk Semua Member_ :
+┈──────────────────────┈
+/play <Judul>  - _Memutar Lagu Melalui Youtube._
+/dplay <Judul>  - _Memutar Lagu Melalui Deezer._
+/reply - _Memutar lagu lewat reply link YouTube atau file audio._
+/playlist - _Untuk Menampilkan Daftar Putar Lagu._
+/song <Judul> - _Untuk Mendownload Lagu di YouTube._
+/vsong <Judul> - _Mendownload Video dari YouTube._
+/deezer <Judul> - _Mendownload Lagu Dari Deezer._
+/saavn <Judul> - _Mendownload Lagu Dari Saavn._
+/search <Judul> - _Mencari Video di YouTube Secara Detail._
+/current - _Mengecek Antrian di Grup Kamu._
+/player - _Mengelola Bot di Grup Kamu._
 
-/play <Judul Lagu>  - Untuk Memutar Lagu Yang Anda Minta Melalui Youtube.
-/dplay <Judul Lagu>  - Untuk Memutar Lagu Yang Anda Minta Melalui Deezer.
-/reply <Link Youtube / Direct> - Untuk Memutar lagu lewat link YouTube atau Lagu biasa (Sudah di Download)
-/playlist - Untuk Menampilkan Daftar Putar Lagu.
-/song <Judul Lagu> - Untuk Mendownload Lagu di YouTube.
-/video atau /vsong <Judul Lagu> - Untuk Mendownload Video di YouTube Secara Detail.
-/deezer <Judul Lagu> - Untuk Mendownload Lagu Dari Deezer.
-/saavn <Judul Lagu> - Untuk Mendownload Lagu Dari Website Saavn.
-/search <Judul Lagu> - Untuk Mencari Video di YouTube Secara Detail.
-/current - Untuk Mengecek Antrian dan Juga Siapa yang Me-Request Lagu Tersebut.
-/player - Untuk Memudahkan Anda Dalam Mengelola Robot.
-
-• Berikut Adalah Perintah Untuk Admin Group :
-
-/pause - Untuk Menjeda Pemutaran Lagu.
-/resume - Untuk Melanjutkan Pemutaran Lagu Yang Telah Dipause.
-/skip - Untuk Menloncati Pemutaran Lagu ke Lagu Berikutnya.
-/end - Untuk Memberhentikan Pemutaran Lagu.
-/joingroup - Untuk Mengundang Asisten Music ke Obrolan Suara.
-/leavegroup - Untuk Menendang Asisten Music dari Obrolan Suara.
-/adminreset - Untuk Memperbarui Admin List.
-/admincache - Untuk Me-Refresh Cache Admin Pada Robot.""")
+_Perintah Untuk Admin Group_ :
+┈──────────────────────┈
+/pause - _Menjeda Lagu._
+/resume - _Melanjutkan Lagu Yang Dipause._
+/skip - _Menloncati Lagu ke Lagu Berikutnya._
+/end - _Memberhentikan Lagu._
+/joingroup - _Mengundang Asisten ke VCG._
+/leavegroup - _Menendang Asisten Music dari VCG._
+/adminreset - _Memperbarui Admin List._
+/admincache - _Me-Refresh Cache Admin Pada Bot._""")
