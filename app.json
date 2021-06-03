@@ -16,7 +16,7 @@
     "BOT_NAME": {
       "description": "Your MusicPlayer Bot Name.",
       "required": false,
-      "value": ""
+      "value": "Honey Music"
     },
     "API_ID": {
       "description": "App ID from my.telegram.org/apps",
