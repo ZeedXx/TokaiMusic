@@ -9,7 +9,7 @@ async def start(_, message: Message):
 ┈──────────────────────┈
 × /play <Judul>  : _Memutar Lagu Melalui Youtube._
 × /dplay <Judul> : _Memutar Lagu Melalui Deezer._
-× /reply <Link>  : _Memutar lagu lewat reply link YouTube atau file audio._
+× /reply <Link>  : _Memutar Lagu Lewat Reply Link YouTube atau File Audio._
 × /playlist : _Untuk Menampilkan Daftar Putar Lagu._
 × /song <Judul>  : _Untuk Mendownload Lagu di YouTube._
 × /vsong <Judul> : _Mendownload Video dari YouTube._
