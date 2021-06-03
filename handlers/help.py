@@ -3,7 +3,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn
 
-@Client.on_message(filters.command("help") & filters.groups & ~filters.channel)
+@Client.on_message(filters.command("help") & filters.group & ~filters.channel)
 async def start(_, message: Message):
       await message.reply_text("""_Perintah Untuk Semua Member_ :
 ┈──────────────────────┈
