@@ -43,11 +43,11 @@ async def play(_, message: Message):
             [
                 [
                    InlineKeyboardButton(
-                       text="📜 Manual",
-                       url='https://telegra.ph/Music-Bot-Command-04-15'),
+                       text="📜 Panduan",
+                       url='https://t.me/ZeedGoodBoys/9'),
                     InlineKeyboardButton(
-                        text="Channel 🔔",
-                        url='https://t.me/TokaiProject')
+                        text="Group",
+                        url='https://t.me/AmazonVirtual')
                    
                 ]
             ]
@@ -74,14 +74,14 @@ async def play(_, message: Message):
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message.chat.id, file=file_path)
-        await lel.edit(f"🔔 **Status:** Queued {position}\n"
-                       f"🎧 **Request Dari:** {message.from_user.mention}")
+        await lel.edit(f"🔔 **Status:** Queued {position}!\n"
+                       f"🎧 **Requested by:** {message.from_user.mention}")
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_photo(
-        photo="https://telegra.ph/file/d1adb5378a94e1a9a4daa.jpg",
+        photo="https://telegra.ph/file/bc6ffe1366bccfb8fd437.jpg",
         reply_markup=keyboard,
-        caption = f"🔔 **Status:** Dimainkan\n" \
-               + f"🎧 **Request Dari:** {message.from_user.mention}"
+        caption = f"🔔 **Status:** `Playing`\n" \
+               + f"🎧 **Requested by:** {message.from_user.mention}"
         ),
         return await lel.delete()
