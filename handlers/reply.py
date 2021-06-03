@@ -43,11 +43,11 @@ async def play(_, message: Message):
             [
                 [
                    InlineKeyboardButton(
-                       text="Manual",
+                       text="📜 Manual",
                        url='https://telegra.ph/Music-Bot-Command-04-15'),
                     InlineKeyboardButton(
-                        text="Channel",
-                        url='https://t.me/TokaiMusik')
+                        text="Channel 🔔",
+                        url='https://t.me/TokaiProject')
                    
                 ]
             ]
