@@ -56,7 +56,7 @@ async def gstart(_, message: Message):
                     InlineKeyboardButton(
                         "Group", url="https://t.me/AmazonVirtual"),
                     InlineKeyboardButton(
-                        "Panduan 📜", url="https://t.me/https://t.me/ZeedGoodBoys/14")
+                        "Panduan 📜", url="https://t.me/ZeedGoodBoys/14")
                 ]
             ]
         )
