@@ -5,27 +5,28 @@ from config import BOT_NAME as bn
 
 @Client.on_message(filters.command("help") & filters.group & ~filters.channel)
 async def start(_, message: Message):
-      await message.reply_text("""_Perintah Untuk Semua Member_ :
+      await message.reply_text("""_^Perintah Untuk Semua Member__ :
 ┈──────────────────────┈
-× /play <Judul>  : _Memutar Lagu Melalui Youtube._
-× /dplay <Judul> : _Memutar Lagu Melalui Deezer._
-× /reply <Link>  : _Memutar Lagu Lewat Reply Link YouTube atau File Audio._
-× /playlist : _Untuk Menampilkan Daftar Putar Lagu._
-× /song <Judul>  : _Untuk Mendownload Lagu di YouTube._
-× /vsong <Judul> : _Mendownload Video dari YouTube._
-× /deezer <Judul> : _Mendownload Lagu Dari Deezer._
-× /saavn <Judul>  : _Mendownload Lagu Dari Saavn._
-× /search <Judul> : _Mencari Video di YouTube Secara Detail._
-× /current : _Mengecek Antrian di Grup Kamu._
-× /player  : _Mengelola Bot di Grup Kamu._
+× /play <Judul>  : __Memutar Lagu Melalui Youtube.__
+× /dplay <Judul> : __Memutar Lagu Melalui Deezer.__
+× /reply <Link>  : __Memutar Lagu Lewat Reply Link YouTube atau File Audio.__
+× /playlist : __Untuk Menampilkan Daftar Putar Lagu.__
+× /song <Judul>  : __Untuk Mendownload Lagu di YouTube.__
+× /vsong <Judul> : __Mendownload Video dari YouTube.__
+× /deezer <Judul> : __Mendownload Lagu Dari Deezer.__
+× /saavn <Judul>  : __Mendownload Lagu Dari Saavn.__
+× /search <Judul> : __Mencari Video di YouTube Secara Detail.__
+× /current : __Mengecek Antrian di Grup Kamu.__
+× /player  : __Mengelola Bot di Grup Kamu.__
 
-_Perintah Untuk Admin Group_ :
+__Perintah Untuk Admin Group__ :
 ┈──────────────────────┈
-× /pause  : _Menjeda Lagu._
-× /resume : _Melanjutkan Lagu Yang Dipause._
-× /skip : _Menloncati Lagu ke Lagu Berikutnya._
-× /end  : _Memberhentikan Lagu._
-× /joingroup  : _Mengundang Asisten ke VCG._
-× /leavegroup : _Menendang Asisten Music dari VCG._
-× /adminreset : _Memperbarui Admin List._
-× /admincache : _Me-Refresh Cache Admin Pada Bot._""")
+× /pause  : __Menjeda Lagu.__
+× /resume : __Melanjutkan Lagu Yang Dipause.__
+× /skip : __Menloncati Lagu ke Lagu Berikutnya.__
+× /end  : __Memberhentikan Lagu.__
+× /joingroup  : __Mengundang Asisten ke VCG.__
+× /leavegroup : __Menendang Asisten Music dari VCG.__
+× /adminreset : __Memperbarui Admin List.__
+× /admincache : __Me-Refresh Cache Admin Pada Bot.__
+• Dikelola Oleh [Honey Music](https://www.instagram.com/enjouecollectifxx)""")
