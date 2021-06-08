@@ -403,7 +403,7 @@ async def m_cb(b, cb):
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
     global que
-    lel = await message.reply("⏳ **Sedang Proses**")
+    lel = await message.reply("🔎 **Mencari Lagu...**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -429,7 +429,7 @@ async def play(_, message: Message):
 
                           try:
                               await USER.join_chat(invitelink)
-                              await USER.send_message(message.chat.id,"Aku Official Assistance Dari Tokai Music Bot")
+                              await USER.send_message(message.chat.id,"Aku Official Assistance Dari Honey Music Bot")
                               await lel.edit(
                                   "<b>Asisten Bot Berhasil Join Ke Grup</b>",
                               )
@@ -448,12 +448,12 @@ async def play(_, message: Message):
         #lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot Tidak Ada Dalam Grup Ini, Minta Admin Untuk /play command Untuk Pertama Kalinya Atau Menambahkan {user.first_name} Secara Manual</i>"
+            f"<i> {user.first_name} Userbot Tidak Ada Dalam Grup Ini, Minta Admin Untuk /play Command Untuk Pertama Kalinya Atau Menambahkan {user.first_name} Secara Manual</i>"
         )
         return     
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
-    await lel.edit("🔎 **Mencari**")
+    await lel.edit("🎶 **Menemukan Lagu**")
     sender_id = message.from_user.id
     user_id = message.from_user.id
     sender_name = message.from_user.first_name
@@ -464,7 +464,7 @@ async def play(_, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    await lel.edit("🎶 **Sedang di Proses**")
+    await lel.edit("⏳ Memutar Lagu yang Anda Minta...****")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -489,13 +489,13 @@ async def play(_, message: Message):
                 [
                                
                     InlineKeyboardButton('Playlist', callback_data='playlist'),
-                    InlineKeyboardButton('Menu', callback_data='menu')
+                    InlineKeyboardButton("Channel", url='https://t.me/ZeedGoodboys')
                 
                 ],                     
                 [
                     InlineKeyboardButton(
-                        text="Channel",
-                        url='https://t.me/ZeedGoodBoys')
+                        text="Instagram",
+                        url='https://www.instagram.com/enjouecollectifxx')
                 ]                             
             ]
         )
@@ -570,7 +570,7 @@ async def deezer(client: Client, message_: Message):
 
                           try:
                               await USER.join_chat(invitelink)
-                              await USER.send_message(message_.chat.id,"Aku Official Assistance Dari Tokai Music Bot")
+                              await USER.send_message(message_.chat.id,"Aku Official Assistance Dari Honey Music Bot")
                               await lel.edit(
                                   "<b>Asisten Bot Berhasil Join Ke Grup</b>",
                               )
@@ -616,12 +616,12 @@ async def deezer(client: Client, message_: Message):
          [   
              [
                  InlineKeyboardButton('Playlist', callback_data='playlist'),
-                 InlineKeyboardButton('Menu', callback_data='menu')     
+                 InlineKeyboardButton("Channel", url='https://t.me/ZeedGoodBoys')     
              ],                     
              [
                  InlineKeyboardButton(
-                     text="Channel",
-                     url='https://t.me/ZeedGoodBoys')
+                     text="Instagram",
+                     url='https://www.instagram.com/enjouecollectifxx')
              ]                      
          ]
      )
@@ -639,7 +639,7 @@ async def deezer(client: Client, message_: Message):
         qeue.append(appendable)
         await res.edit_text(f"🔮 **Your Request Song**\n🍋 **Status**: Antrean Di Posisi {position}!")
     else:
-        await res.edit_text("Tokai Music ▶️ Memutar.....")
+        await res.edit_text("Honey Music ▶️ Memutar.....")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
@@ -693,7 +693,7 @@ async def jiosaavn(client: Client, message_: Message):
 
                           try:
                               await USER.join_chat(invitelink)
-                              await USER.send_message(message_.chat.id,"Aku Official Assistance Dari Tokai Music Bot")
+                              await USER.send_message(message_.chat.id,"Aku Official Assistance Dari Honey Music Bot")
                               await lel.edit(
                                   "<b>Asisten Bot Berhasil Join Ke Grup</b>",
                               )
@@ -743,7 +743,7 @@ async def jiosaavn(client: Client, message_: Message):
          [   
              [
                InlineKeyboardButton('Playlist', callback_data='playlist'),
-               InlineKeyboardButton('Menu', callback_data='menu')   
+               InlineKeyboardButton("Channel", url='https://t.me/ZeedGoodBoys')   
              ],                     
              [
                InlineKeyboardButton(
@@ -771,7 +771,7 @@ async def jiosaavn(client: Client, message_: Message):
         )           
            
     else:
-        await res.edit_text("Tokai Music ▶️ Memutar.....")
+        await res.edit_text("Honey Music ▶️ Memutar.....")
         chat_id = message_.chat.id
         que[chat_id] = []
         qeue = que.get(message_.chat.id)
