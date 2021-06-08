@@ -24,5 +24,5 @@ from pyrogram.types import Chat, Message, User
 
 @USER.on_message(filters.text & filters.private & ~filters.me & ~filters.bot)
 async def pmPermit(client: USER, message: Message):
-  await USER.send_message(message.chat.id,"Halo, Aku Official Assistance Dari [Honey Music](https://t.me/HoneyMusic_bot).\n\n ❗️ Rules:\n   - No Chatting Allowed\n   - No Spam Allowed\n\n 👉 **KIRIM LINK ATAU USERNAME GRUP KAMU DISINI JIKA ASISTEN TIDAK JOIN.**\n\n ⚠️ **Perhatian**!: Jika Anda Mengirim Pesan di Sini Berarti Admin Akan Melihat Pesan Anda dan Akan Segera Bergabung Dengan Grup Obrolan Anda.\n   - Jangan Bagikan Info Pribadi Di Sini!!\n   - [Managed by](https://www.instagram.com/enjouecollectifxx) : @ZeedGoodBoys")
+  await USER.send_message(message.chat.id,"Halo, Aku Official Assistance Dari @HoneyMusic_bot.\n\n ❗️ Rules:\n   - No Chatting Allowed\n   - No Spam Allowed\n\n 👉 **KIRIM LINK ATAU USERNAME GRUP KAMU DISINI JIKA ASISTEN TIDAK JOIN.**\n\n ⚠️ **Perhatian**!: Jika Anda Mengirim Pesan di Sini Berarti Admin Akan Melihat Pesan Anda dan Akan Segera Bergabung Dengan Grup Obrolan Anda.\n   - Jangan Bagikan Info Pribadi Di Sini!!\n   - [Managed by](https://www.instagram.com/enjouecollectifxx) : @ZeedGoodBoys")
   return                        
